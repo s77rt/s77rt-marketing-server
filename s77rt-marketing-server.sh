@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.1"
+VERSION="0.1.2"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
@@ -13,7 +13,7 @@ fi
 ##########################################
 
 getMainIP() {
-	echo $(hostname -I | cut -d" " -f 1)
+	echo $(hostname -I | awk '{ for(i=1; i<=NF; i++){if ($i != "127.0.0.1" && $i != "::1"){ print $i; break}} }')
 }
 
 genPassword() {
@@ -176,6 +176,14 @@ bash start.sh
 cd ..
 
 ##########################################
+
+echo "Enabling IP Rotation..."
+cd extras/ip-rotation/
+bash enable.sh
+cd ../../
+
+##########################################
+
 
 echo "DONE"
 echo "##########################################"
