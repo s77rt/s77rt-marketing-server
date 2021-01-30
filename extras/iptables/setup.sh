@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-python3 enable.py
+python3 setup.py

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.3"
+VERSION="0.1.4"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
@@ -177,9 +177,9 @@ cd ..
 
 ##########################################
 
-echo "Enabling IP Rotation..."
-cd extras/ip-rotation/
-bash enable.sh
+echo "Configuring iptables..."
+cd extras/iptables/
+bash setup.sh
 cd ../../
 
 ##########################################
