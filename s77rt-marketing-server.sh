@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.2"
+VERSION="0.1.3"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
