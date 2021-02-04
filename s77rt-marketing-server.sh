@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.4"
+VERSION="0.1.5"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
@@ -128,7 +128,7 @@ export MYSQL_ROOT_PASSWORD=$(genPassword)
 ##########################################
 
 echo "Checking DATA... (2/2)"
-VALID_MW_L=$(curl -w "%{http_code}\n" -s -I -X GET -H "X-LICENSEKEY: $MW_L_PURCHASE_CODE" https://www.mailwizz.com/api/download/version/latest -o /dev/null)
+VALID_MW_L=$(curl -w "%{http_code}\n" -s -I -X GET -H "Cache-Control: no-cache" -H "X-LICENSEKEY: $MW_L_PURCHASE_CODE" https://www.mailwizz.com/api/download/version/latest -o /dev/null)
 if [ "$VALID_MW_L" != "200" ]; then
 	echo "Invalid MailWizz License!"
 	exit 20
