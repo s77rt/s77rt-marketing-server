@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Hooks
+/bin/cp hooks/init-custom.php /usr/share/nginx/html/apps/
+
 # Cron
 touch mwcron
 echo "* * * * * /usr/bin/php -q /usr/share/nginx/html/apps/console/console.php send-campaigns >/dev/null 2>&1" >> mwcron

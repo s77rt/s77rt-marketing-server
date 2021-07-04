@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.1.5"
+VERSION="0.2.0"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
@@ -125,6 +125,10 @@ export MW_URL_CUSTOMER
 
 export MYSQL_ROOT_PASSWORD=$(genPassword)
 
+export SMTP_HOSTNAME="mailer.localhost"
+export SMTP_USERNAME="mailer"
+export SMTP_PASSWORD=$(genPassword)
+
 ##########################################
 
 echo "Checking DATA... (2/2)"
@@ -165,6 +169,12 @@ bash install.sh
 bash configure.sh
 bash start.sh
 cd ../../
+echo "Installing SMTP Server (Postfix + Cyrus SASL)..."
+cd utils/smtp/
+bash install.sh
+bash configure.sh
+bash start.sh
+cd ../../
 
 ##########################################
 
@@ -184,12 +194,15 @@ cd ../../
 
 ##########################################
 
-
 echo "DONE"
 echo "##########################################"
 echo "KEEP THOSE INFO SAFE"
 echo "##########################################"
 echo "MYSQL ROOT PASSWORD: $MYSQL_ROOT_PASSWORD"
+echo "###"
+echo "SMTP Hostname: $SMTP_HOSTNAME"
+echo "SMTP Username: $SMTP_USERNAME"
+echo "SMTP Password: $SMTP_PASSWORD"
 echo "###"
 echo "MailWizz DB Username: $MW_DB_USERNAME"
 echo "MailWizz DB Password: $MW_DB_PASSWORD"
