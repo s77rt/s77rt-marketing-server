@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.2.0"
+VERSION="0.2.1"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
@@ -201,7 +201,7 @@ echo "##########################################"
 echo "MYSQL ROOT PASSWORD: $MYSQL_ROOT_PASSWORD"
 echo "###"
 echo "SMTP Hostname: $SMTP_HOSTNAME"
-echo "SMTP Username: $SMTP_USERNAME"
+echo "SMTP Username: $SMTP_USERNAME@$SMTP_HOSTNAME"
 echo "SMTP Password: $SMTP_PASSWORD"
 echo "###"
 echo "MailWizz DB Username: $MW_DB_USERNAME"
