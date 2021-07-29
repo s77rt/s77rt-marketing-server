@@ -10,3 +10,4 @@ chmod +x /usr/share/nginx/html/apps/console/commands/shell/set-dir-perms
 /usr/share/nginx/html/apps/console/commands/shell/set-dir-perms
 python3 web_install.py
 rm -rf /usr/share/nginx/html/install
+/usr/share/nginx/html/apps/console/commands/shell/set-dir-perms
