@@ -6,6 +6,7 @@ unzip -qq mailwizz.zip
 mv mailwizz-* mailwizz
 rm -rf /usr/share/nginx/html/*
 cp -r mailwizz/latest/* /usr/share/nginx/html/
+chown -R nginx:nginx /usr/share/nginx/html/
 chmod +x /usr/share/nginx/html/apps/console/commands/shell/set-dir-perms
 /usr/share/nginx/html/apps/console/commands/shell/set-dir-perms
 python3 web_install.py
