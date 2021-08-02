@@ -2,6 +2,7 @@
 
 # Hooks
 /bin/cp hooks/init-custom.php /usr/share/nginx/html/apps/
+chown nginx:nginx /usr/share/nginx/html/apps/init-custom.php
 
 # Cron
 touch mwcron
