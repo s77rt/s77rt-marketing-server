@@ -151,6 +151,12 @@ bash start.sh
 cd ../../
 echo "Installing Prerequisites..."
 yum install curl pwgen openssl expect nano unzip perl python3 python3-requests -y
+echo "Installing NGINX..."
+cd utils/nginx/
+bash install.sh
+bash configure.sh
+bash start.sh
+cd ../../
 echo "Installing MySQL..."
 cd utils/mysql/
 bash install.sh
@@ -159,12 +165,6 @@ bash start.sh
 cd ../../
 echo "Installing PHP..."
 cd utils/php/
-bash install.sh
-bash configure.sh
-bash start.sh
-cd ../../
-echo "Installing NGINX..."
-cd utils/nginx/
 bash install.sh
 bash configure.sh
 bash start.sh
