@@ -44,9 +44,9 @@ def main() -> None:
 	s.post("http://"+HOSTNAME+"/install/index.php?route=welcome", data={
 		'market_place': LICENSE['market_place'],
 		'purchase_code': LICENSE['purchase_code'],
-		'site_name': META['MW_M_SITE_NAME'],
-		'site_tagline': META['MW_M_SITE_TAGLINE'],
-		'site_description': META['MW_M_SITE_DESCRIPTION'],
+		'site_name': META['site_name'],
+		'site_tagline': META['site_tagline'],
+		'site_description': META['site_description'],
 		'terms_consent': 1,
 		'next': 1
 	})
