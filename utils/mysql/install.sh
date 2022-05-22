@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
-rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
-yum install mysql-server -y
+wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+chmod +x mariadb_repo_setup
+./mariadb_repo_setup
+
+yum install MariaDB-server -y
