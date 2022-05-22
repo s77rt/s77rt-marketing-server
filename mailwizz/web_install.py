@@ -10,6 +10,13 @@ LICENSE = {
 	'purchase_code': environ.get('MW_L_PURCHASE_CODE'),
 }
 
+# Meta
+META = {
+	'site_name': environ.get('MW_M_SITE_NAME'),
+	'site_tagline': environ.get('MW_M_SITE_TAGLINE'),
+	'site_description': environ.get('MW_M_SITE_DESCRIPTION'),
+}
+
 # Database
 DB = {
 	'hostname': environ.get('MW_DB_HOSTNAME'),
@@ -37,6 +44,9 @@ def main() -> None:
 	s.post("http://"+HOSTNAME+"/install/index.php?route=welcome", data={
 		'market_place': LICENSE['market_place'],
 		'purchase_code': LICENSE['purchase_code'],
+		'site_name': META['MW_M_SITE_NAME'],
+		'site_tagline': META['MW_M_SITE_TAGLINE'],
+		'site_description': META['MW_M_SITE_DESCRIPTION'],
 		'terms_consent': 1,
 		'next': 1
 	})
