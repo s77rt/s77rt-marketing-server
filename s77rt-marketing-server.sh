@@ -168,7 +168,7 @@ bash configure.sh
 bash start.sh
 cd ../../
 echo "Installing Prerequisites..."
-yum install net-tools curl pwgen openssl expect nano unzip perl python3 python3-requests -y
+yum install wget net-tools curl pwgen openssl expect nano unzip perl python3 python3-requests -y
 echo "Installing NGINX..."
 cd utils/nginx/
 bash install.sh
