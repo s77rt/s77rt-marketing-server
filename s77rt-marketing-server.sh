@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.2.2"
+VERSION="0.2.3"
 
 echo "s77rt - Marketing Server v$VERSION (Centos 7.x)"
 
@@ -34,6 +34,21 @@ if [[ -z "$MW_L_PURCHASE_CODE" ]]; then
 	exit 10
 fi
 echo "MW_L_PURCHASE_CODE: $MW_L_PURCHASE_CODE"
+
+if [[ -z "$MW_M_SITE_NAME" ]]; then
+	MW_M_SITE_NAME="Email Marketing"
+fi
+echo "MW_M_SITE_NAME: $MW_M_SITE_NAME"
+
+if [[ -z "$MW_M_SITE_TAGLINE" ]]; then
+	MW_M_SITE_TAGLINE="Email Marketing"
+fi
+echo "MW_M_SITE_TAGLINE: $MW_M_SITE_TAGLINE"
+
+if [[ -z "$MW_M_SITE_DESCRIPTION" ]]; then
+	MW_M_SITE_DESCRIPTION="Email Marketing"
+fi
+echo "MW_M_SITE_DESCRIPTION: $MW_M_SITE_DESCRIPTION"
 
 if [[ -z "$MW_DB_HOSTNAME" ]]; then
 	MW_DB_HOSTNAME="localhost"
@@ -98,6 +113,9 @@ echo "MW_A_CREATECUSTOMER: $MW_A_CREATECUSTOMER"
 
 export MW_L_MARKET_PLACE
 export MW_L_PURCHASE_CODE
+export MW_M_SITE_NAME
+export MW_M_SITE_TAGLINE
+export MW_M_SITE_DESCRIPTION
 export MW_DB_HOSTNAME
 export MW_DB_PORT
 export MW_DB_USERNAME
